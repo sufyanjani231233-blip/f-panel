@@ -11,25 +11,17 @@
       "expiryDate": "2025-12-31"
     }
   },
+   "EREN": {
+    "expired_user": {
+      "password": "pass123",
+      "hwid": "",
+      "expiryDate": "2025-01-01"
+    },
   "INSANE": {
     "usman_pro": {
       "password": "usmanpassword",
       "hwid": "",
       "expiryDate": "2027-10-15"
-    }
-  }
-}
-{
-  "EREN": {
-    "expired_user": {
-      "password": "pass123",
-      "hwid": "",
-      "expiryDate": "2027-01-01"
-    },
-    "active_user": {
-      "password": "pass123",
-      "hwid": "",
-      "expiryDate": "2027-12-31"
     }
   }
 }
