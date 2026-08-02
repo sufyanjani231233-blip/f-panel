@@ -1,7 +1,8 @@
 {
-  "william": {
-    "password": "2",
-    "hwid": "",
-    "status": "active"
+  "users": {
+    "newuser123": {
+      "password": "mypassword123",
+      "hwid": "b10a8db164e0754105b7a99be72e3fe5" 
+    }
   }
 }
