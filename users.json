@@ -19,3 +19,17 @@
     }
   }
 }
+{
+  "EREN": {
+    "expired_user": {
+      "password": "pass123",
+      "hwid": "",
+      "expiryDate": "2025-01-01"
+    },
+    "active_user": {
+      "password": "pass123",
+      "hwid": "",
+      "expiryDate": "2027-12-31"
+    }
+  }
+}
