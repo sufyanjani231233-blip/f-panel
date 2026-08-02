@@ -1,7 +1,7 @@
 {
-  "users": {
-    "william": {
-      "password": "2"
-    }
+  "william": {
+    "password": "2",
+    "hwid": "",
+    "status": "active"
   }
 }
