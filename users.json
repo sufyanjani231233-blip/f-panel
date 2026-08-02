@@ -1,21 +1,21 @@
 {
   "EREN": {
-    "user1": {
-      "password": "12345",
+    "ali123": {
+      "password": "mypassword1",
       "hwid": "",
+      "expiryDate": "2026-12-31"
+    },
+    "ahmed_free": {
+      "password": "mypassword2",
+      "hwid": "free",
       "expiryDate": "No Expiry"
     }
   },
   "INSANE": {
-    "user2": {
-      "password": "abc123",
+    "usman_pro": {
+      "password": "usmanpassword",
       "hwid": "",
-      "expiryDate": "2026-12-31"
-    },
-    "freeuser": {
-      "password": "free123",
-      "hwid": "free",
-      "expiryDate": "No Expiry"
+      "expiryDate": "2026-10-15"
     }
   }
 }
