@@ -1,7 +1,8 @@
-{
-  "william": {
+[
+  {
+    "username": "william",
     "password": "2",
     "hwid": "",
     "status": "active"
   }
-}
+]
