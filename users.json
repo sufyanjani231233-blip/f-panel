@@ -2,12 +2,12 @@
     "EREN": {
         "testuser1": {
             "password": "123456",
-            "hwid": "",
+            "hwid": "jytiit69y7u",
             "expiryDate": "2025-08-04",
             "isFreeUser": false,
-            "hwid_bind_date": "",
-            "hwid_reset_date": "",
-            "last_reset_date": "2026-08-04"
+            "hwid_bind_date": "2026-07-03",
+            "hwid_reset_date": "2026-08-03",
+            "last_reset_date": "2026-08-03"
         },
         "testuser2": {
             "password": "123456",
