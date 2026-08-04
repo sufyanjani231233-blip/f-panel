@@ -1,16 +1,14 @@
 {
     "EREN": {
-
         "active_reset_today": {
             "password": "pass123",
-            "hwid": "HWID-111111",
+            "hwid": "",
             "expiryDate": "2027-12-31",
             "isFreeUser": false,
-            "hwid_bind_date": "2026-07-05",
-            "hwid_reset_date": "2026-08-04",
-            "last_reset_date": ""
+            "hwid_bind_date": "",
+            "hwid_reset_date": "",
+            "last_reset_date": "2026-08-04"
         },
-
         "active_not_due": {
             "password": "pass123",
             "hwid": "HWID-222222",
@@ -20,7 +18,6 @@
             "hwid_reset_date": "2026-08-20",
             "last_reset_date": ""
         },
-
         "expired_user": {
             "password": "pass123",
             "hwid": "HWID-333333",
@@ -30,7 +27,6 @@
             "hwid_reset_date": "2026-07-10",
             "last_reset_date": ""
         },
-
         "free_user": {
             "password": "pass123",
             "hwid": "HWID-444444",
@@ -40,7 +36,6 @@
             "hwid_reset_date": "2026-08-01",
             "last_reset_date": ""
         },
-
         "empty_hwid": {
             "password": "pass123",
             "hwid": "",
@@ -50,7 +45,6 @@
             "hwid_reset_date": "",
             "last_reset_date": ""
         },
-
         "already_reset": {
             "password": "pass123",
             "hwid": "",
@@ -60,7 +54,6 @@
             "hwid_reset_date": "",
             "last_reset_date": "2026-08-01"
         },
-
         "reset_tomorrow": {
             "password": "pass123",
             "hwid": "HWID-777777",
@@ -70,6 +63,5 @@
             "hwid_reset_date": "2026-08-05",
             "last_reset_date": ""
         }
-
     }
 }
