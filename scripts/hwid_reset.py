@@ -1,37 +1,38 @@
 import json
 from datetime import datetime
 
-FILE = "database/users.json"
+FILE = "users.json"
 
 today = datetime.utcnow().date()
+changed = False
 
 with open(FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-changed = False
 
-for owner in data.values():
+for owner_name, owner in data.items():
+
+    if not isinstance(owner, dict):
+        continue
 
     for username, user in owner.items():
 
-        # Expiry users skip
-        if user.get("expiryDate"):
+        if not isinstance(user, dict):
             continue
 
-        # Free users skip
-        if user.get("isFreeUser") == True:
+        # Skip free users only
+        if user.get("isFreeUser", False):
             continue
 
-        hwid = user.get("hwid", "").strip()
-        reset_date = user.get("hwid_reset_date", "").strip()
+        hwid = str(user.get("hwid", "")).strip()
+        reset_date = str(user.get("hwid_reset_date", "")).strip()
 
-        if hwid == "":
-            continue
-
-        if reset_date == "":
+        # Nothing to reset
+        if hwid == "" or reset_date == "":
             continue
 
         try:
+
             reset = datetime.strptime(reset_date, "%Y-%m-%d").date()
 
             if today >= reset:
@@ -43,9 +44,20 @@ for owner in data.values():
 
                 changed = True
 
-        except:
-            pass
+                print(f"[RESET] {owner_name} -> {username}")
+
+        except Exception as e:
+
+            print(f"[SKIP] {username}: {e}")
+
 
 if changed:
+
     with open(FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
+
+    print("Changes Saved")
+
+else:
+
+    print("No user needs reset today.")
