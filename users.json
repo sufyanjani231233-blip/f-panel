@@ -1,22 +1,45 @@
 {
     "EREN": {
-        "testuser1": {
+
+        "activeuser": {
             "password": "123456",
-            "hwid": "",
-            "expiryDate": "2025-08-04",
+            "hwid": "ABC123456789",
+            "expiryDate": "2027-12-31",
             "isFreeUser": false,
-            "hwid_bind_date": "",
-            "hwid_reset_date": "",
-            "last_reset_date": "2026-08-04"
+            "hwid_bind_date": "2026-08-04",
+            "hwid_reset_date": "2026-09-04",
+            "last_reset_date": ""
         },
-        "testuser2": {
+
+        "expireduser": {
             "password": "123456",
-            "hwid": "",
-            "expiryDate": "2028-08-04",
+            "hwid": "XYZ987654321",
+            "expiryDate": "2026-07-01",
             "isFreeUser": false,
-            "hwid_bind_date": "",
-            "hwid_reset_date": "",
-            "last_reset_date": "2026-08-04"
+            "hwid_bind_date": "2026-08-03",
+            "hwid_reset_date": "2026-08-03",
+            "last_reset_date": ""
+        },
+
+        "freeuser": {
+            "password": "123456",
+            "hwid": "FREE111222333",
+            "expiryDate": "free",
+            "isFreeUser": true,
+            "hwid_bind_date": "2026-08-03",
+            "hwid_reset_date": "2026-08-03",
+            "last_reset_date": ""
+        },
+
+        "nouserhwid": {
+            "password": "123456",
+            "hwid": "ytuiiuyiuy",
+            "expiryDate": "2026-08-03",
+            "isFreeUser": false,
+            "hwid_bind_date": "2026-08-03",
+            "hwid_reset_date": "2026-08-03",
+            "last_reset_date": ""
         }
+
     }
 }
