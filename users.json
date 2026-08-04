@@ -3,7 +3,7 @@
         "testuser1": {
             "password": "123456",
             "hwid": "HWID-TEST-111111",
-            "expiryDate": "",
+            "expiryDate": "2028-08-04",
             "isFreeUser": false,
             "hwid_bind_date": "2026-07-01",
             "hwid_reset_date": "2026-07-03",
@@ -13,7 +13,7 @@
         "testuser2": {
             "password": "123456",
             "hwid": "HWID-TEST-222222",
-            "expiryDate": "",
+            "expiryDate": "2028-08-04",
             "isFreeUser": false,
             "hwid_bind_date": "2026-08-04",
             "hwid_reset_date": "2026-09-03",
