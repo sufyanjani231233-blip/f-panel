@@ -38,7 +38,7 @@
         },
         "empty_hwid": {
             "password": "pass123",
-            "hwid": "",
+            "hwid": "trteytryurtuty",
             "expiryDate": "2027-12-31",
             "isFreeUser": false,
             "hwid_bind_date": "",
