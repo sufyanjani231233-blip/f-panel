@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 
 FILE = "users.json"
 
@@ -19,23 +19,22 @@ for owner_name, owner in data.items():
         if not isinstance(user, dict):
             continue
 
-        # -----------------------------
+        # ---------------------------------
         # Skip Free Users
-        # -----------------------------
+        # ---------------------------------
         if user.get("isFreeUser", False):
             print(f"[SKIP FREE] {owner_name} -> {username}")
             continue
 
-        # -----------------------------
+        # ---------------------------------
         # Skip Expired Users
-        # -----------------------------
+        # ---------------------------------
         expiry = str(user.get("expiryDate", "")).strip()
 
         if expiry != "":
             try:
                 expiry_date = datetime.strptime(expiry, "%Y-%m-%d").date()
 
-                # Agar account expire ho chuka hai
                 if today > expiry_date:
                     print(f"[SKIP EXPIRED] {owner_name} -> {username}")
                     continue
@@ -44,19 +43,37 @@ for owner_name, owner in data.items():
                 print(f"[INVALID EXPIRY] {owner_name} -> {username}")
                 continue
 
-        # -----------------------------
-        # Read HWID Data
-        # -----------------------------
+        # ---------------------------------
+        # Read HWID Information
+        # ---------------------------------
         hwid = str(user.get("hwid", "")).strip()
+        bind_date = str(user.get("hwid_bind_date", "")).strip()
         reset_date = str(user.get("hwid_reset_date", "")).strip()
 
-        # HWID ya Reset Date nahi hai
-        if hwid == "" or reset_date == "":
+        # No HWID
+        if hwid == "":
             continue
 
-        # -----------------------------
+        # ---------------------------------
+        # Automatically Create Dates
+        # ---------------------------------
+        if bind_date == "" or reset_date == "":
+
+            user["hwid_bind_date"] = today.strftime("%Y-%m-%d")
+            user["hwid_reset_date"] = (
+                today + timedelta(days=30)
+            ).strftime("%Y-%m-%d")
+
+            changed = True
+
+            print(f"[DATES CREATED] {owner_name} -> {username}")
+
+            # Next Action run me reset check hogi
+            continue
+
+        # ---------------------------------
         # Check Reset Date
-        # -----------------------------
+        # ---------------------------------
         try:
 
             reset = datetime.strptime(reset_date, "%Y-%m-%d").date()
@@ -74,11 +91,11 @@ for owner_name, owner in data.items():
 
         except Exception as e:
 
-            print(f"[INVALID RESET DATE] {owner_name} -> {username} : {e}")
+            print(f"[INVALID RESET DATE] {owner_name} -> {username}: {e}")
 
-# ------------------------------------
-# Save File
-# ------------------------------------
+# ---------------------------------
+# Save JSON
+# ---------------------------------
 
 if changed:
 
