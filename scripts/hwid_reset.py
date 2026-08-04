@@ -9,7 +9,6 @@ changed = False
 with open(FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-
 for owner_name, owner in data.items():
 
     if not isinstance(owner, dict):
@@ -20,17 +19,44 @@ for owner_name, owner in data.items():
         if not isinstance(user, dict):
             continue
 
-        # Skip free users only
+        # -----------------------------
+        # Skip Free Users
+        # -----------------------------
         if user.get("isFreeUser", False):
+            print(f"[SKIP FREE] {owner_name} -> {username}")
             continue
 
+        # -----------------------------
+        # Skip Expired Users
+        # -----------------------------
+        expiry = str(user.get("expiryDate", "")).strip()
+
+        if expiry != "":
+            try:
+                expiry_date = datetime.strptime(expiry, "%Y-%m-%d").date()
+
+                # Agar account expire ho chuka hai
+                if today > expiry_date:
+                    print(f"[SKIP EXPIRED] {owner_name} -> {username}")
+                    continue
+
+            except Exception:
+                print(f"[INVALID EXPIRY] {owner_name} -> {username}")
+                continue
+
+        # -----------------------------
+        # Read HWID Data
+        # -----------------------------
         hwid = str(user.get("hwid", "")).strip()
         reset_date = str(user.get("hwid_reset_date", "")).strip()
 
-        # Nothing to reset
+        # HWID ya Reset Date nahi hai
         if hwid == "" or reset_date == "":
             continue
 
+        # -----------------------------
+        # Check Reset Date
+        # -----------------------------
         try:
 
             reset = datetime.strptime(reset_date, "%Y-%m-%d").date()
@@ -48,16 +74,23 @@ for owner_name, owner in data.items():
 
         except Exception as e:
 
-            print(f"[SKIP] {username}: {e}")
+            print(f"[INVALID RESET DATE] {owner_name} -> {username} : {e}")
 
+# ------------------------------------
+# Save File
+# ------------------------------------
 
 if changed:
 
     with open(FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4)
 
-    print("Changes Saved")
+    print("===================================")
+    print("Changes Saved Successfully")
+    print("===================================")
 
 else:
 
-    print("No user needs reset today.")
+    print("===================================")
+    print("No User Needs Reset Today")
+    print("===================================")
