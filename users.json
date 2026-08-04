@@ -1,13 +1,13 @@
 {
-  "EREN": {
-    "rehan123": {
-      "password": "xxxx",
-      "hwid": "ABC123",
-      "expiryDate": "2027-12-31",
-      "isFreeUser": false,
-      "hwid_bind_date": "2026-07-04",
-      "hwid_reset_date": "2026-08-03",
-      "last_reset_date": ""
+    "EREN": {
+        "rehan123": {
+            "password": "xxxx",
+            "hwid": "",
+            "expiryDate": "2027-12-31",
+            "isFreeUser": false,
+            "hwid_bind_date": "",
+            "hwid_reset_date": "",
+            "last_reset_date": "2026-08-04"
+        }
     }
-  }
 }
