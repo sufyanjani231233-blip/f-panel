@@ -2,11 +2,11 @@
     "EREN": {
         "rehan123": {
             "password": "mypassword",
-            "hwid": "675765764563456",
+            "hwid": "",
             "expiryDate": "2027-08-04",
             "isFreeUser": false,
-            "hwid_bind_date": "2026-08-04",
-            "hwid_reset_date": "2026-08-04",
+            "hwid_bind_date": "",
+            "hwid_reset_date": "",
             "last_reset_date": "2026-08-04"
         }
     }
