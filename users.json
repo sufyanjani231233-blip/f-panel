@@ -56,12 +56,12 @@
         },
         "reset_tomorrow": {
             "password": "pass123",
-            "hwid": "HWID-777777",
+            "hwid": "",
             "expiryDate": "2027-12-31",
             "isFreeUser": false,
-            "hwid_bind_date": "2026-07-06",
-            "hwid_reset_date": "2026-08-05",
-            "last_reset_date": ""
+            "hwid_bind_date": "",
+            "hwid_reset_date": "",
+            "last_reset_date": "2026-08-05"
         }
     }
 }
